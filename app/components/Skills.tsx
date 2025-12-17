@@ -1,85 +1,81 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import {
+  SiGit,
+  SiDocker,
+  SiMongodb,
+  SiPostgresql,
+  SiReact,
+  SiNextdotjs,
+  SiTailwindcss,
+  SiTypescript,
+  SiNodedotjs,
+  SiExpress,
+  SiAngular,
+  SiMysql,
+  SiLaravel,
+} from 'react-icons/si';
 
-const skills = [
-  { name: 'HTML', percentage: 95 },
-  { name: 'CSS', percentage: 90 },
-  { name: 'JavaScript', percentage: 85 },
-  { name: 'React', percentage: 88 },
-  { name: 'Next.js', percentage: 85 },
-  { name: 'Node.js', percentage: 80 },
-  { name: 'Express', percentage: 82 },
-  { name: 'TypeScript', percentage: 83 },
+type Skill = {
+  name: string;
+  icon: React.ElementType;
+  color: string; // HEX or Tailwind class
+  useHex?: boolean; // optional flag to use hex color
+};
+
+const skills: Skill[] = [
+  { name: 'React', icon: SiReact, color: '#61DAFB', useHex: true },
+  { name: 'Next.js', icon: SiNextdotjs, color: '#000000', useHex: true },
+  { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', useHex: true },
+  { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4', useHex: true },
+  { name: 'Angular', icon: SiAngular, color: '#DD0031', useHex: true },
+  { name: 'Laravel', icon: SiLaravel, color: '#FF2D20', useHex: true },
+  { name: 'MySQL', icon: SiMysql, color: '#4479A1', useHex: true },
+  { name: 'NodeJS', icon: SiNodedotjs, color: '#339933', useHex: true },
+  { name: 'Express', icon: SiExpress, color: '#000000', useHex: true },
+  { name: 'Git', icon: SiGit, color: '#F1502F', useHex: true },
+  { name: 'Docker', icon: SiDocker, color: '#2496ED', useHex: true },
+  { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791', useHex: true },
 ];
 
 export default function Skills() {
-  const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const currentRef = sectionRef.current;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (currentRef) {
-      observer.observe(currentRef);
-    }
-
-    return () => {
-      if (currentRef) {
-        observer.unobserve(currentRef);
-      }
-    };
-  }, []);
-
   return (
-    <section id="skills" ref={sectionRef} className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-gray-900">
-          My <span className="text-blue-600">Skills</span>
+    <section
+      id="skills"
+      className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors"
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Section Title */}
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 dark:text-white">
+          My <span className="text-primary">Skills</span>
         </h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {skills.map((skill, index) => (
-            <div key={skill.name} className="space-y-2">
-              <div className="flex justify-between items-center">
-                <span className="text-lg font-semibold text-gray-800">
+
+        {/* Skills Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+          {skills.map((skill) => {
+            const Icon = skill.icon;
+            return (
+              <div
+                key={skill.name}
+                className="group flex flex-col items-center justify-center
+                           rounded-2xl p-6 bg-white dark:bg-slate-800
+                           shadow-md hover:shadow-xl
+                           transition transform hover:-translate-y-1"
+              >
+                {/* Icon */}
+                <Icon
+                  size={50}
+                  color={skill.useHex ? skill.color : undefined}
+                  className={!skill.useHex ? `${skill.color} mb-4 group-hover:scale-110 transition` : 'mb-4 group-hover:scale-110 transition'}
+                />
+
+                {/* Name */}
+                <p className="font-medium text-slate-800 dark:text-slate-200">
                   {skill.name}
-                </span>
-                <span className="text-sm font-medium text-blue-600">
-                  {skill.percentage}%
-                </span>
+                </p>
               </div>
-              <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-                <div
-                  className="bg-gradient-to-r from-blue-500 to-blue-600 h-full rounded-full transition-all duration-1000 ease-out"
-                  style={{
-                    width: isVisible ? `${skill.percentage}%` : '0%',
-                    transitionDelay: `${index * 100}ms`,
-                  }}
-                ></div>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-          {['Git', 'Docker', 'MongoDB', 'PostgreSQL'].map((tech) => (
-            <div
-              key={tech}
-              className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300"
-            >
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-3">
-                <span className="text-2xl font-bold text-blue-600">{tech.slice(0, 1)}</span>
-              </div>
-              <span className="text-gray-800 font-medium">{tech}</span>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
