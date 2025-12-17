@@ -1,6 +1,15 @@
 'use client';
 
 import { useState } from 'react';
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaTelegramPlane,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -16,181 +25,182 @@ export default function Contact() {
     setFormData({ name: '', email: '', message: '' });
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
   };
 
+  const socials = [
+    { icon: FaGithub, url: 'https://github.com', label: 'GitHub', color: 'text-gray-900 dark:text-gray-100' },
+    { icon: FaLinkedin, url: 'https://linkedin.com', label: 'LinkedIn', color: 'text-blue-700 dark:text-blue-500' },
+    { icon: FaInstagram, url: 'https://instagram.com', label: 'Instagram', color: 'text-pink-500' },
+    { icon: FaTelegramPlane, url: 'https://t.me', label: 'Telegram', color: 'text-blue-400' },
+  ];
+
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 to-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-gray-900">
-          Get In <span className="text-blue-600">Touch</span>
+    <section
+      id="contact"
+      className="py-20 bg-slate-50 dark:bg-slate-900 transition-colors"
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 dark:text-white">
+          Get In <span className="text-primary">Touch</span>
         </h2>
-        <p className="text-center text-gray-600 mb-16 max-w-2xl mx-auto">
+        <p className="text-center text-slate-600 dark:text-slate-400 mb-16 max-w-2xl mx-auto">
           Have a project in mind or want to collaborate? Feel free to reach out!
         </p>
+
         <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          <div className="space-y-8">
+          {/* Contact Info */}
+          <div className="space-y-10">
             <div>
-              <h3 className="text-2xl font-bold mb-6 text-gray-900">Contact Information</h3>
-              <div className="space-y-4">
+              <h3 className="text-2xl font-bold mb-6 dark:text-white">
+                Contact Information
+              </h3>
+
+              <div className="space-y-6">
+                {/* Email */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-6 h-6 text-blue-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                      />
-                    </svg>
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <FaEnvelope className="text-primary text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Email</h4>
+                    <h4 className="font-semibold dark:text-white">Email</h4>
                     <a
-                      href="mailto:your.email@example.com"
-                      className="text-gray-600 hover:text-blue-600"
+                      href="mailto:tigistashenafi42@gmail.com"
+                      className="text-slate-600 dark:text-slate-400 hover:text-primary"
                     >
-                      your.email@example.com
+                      tigistashenafi42@gmail.com
                     </a>
                   </div>
                 </div>
+
+                {/* Phone */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-6 h-6 text-blue-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                      />
-                    </svg>
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <FaPhoneAlt className="text-primary text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Phone</h4>
-                    <a href="tel:+1234567890" className="text-gray-600 hover:text-blue-600">
-                      +123 456 7890
+                    <h4 className="font-semibold dark:text-white">Phone</h4>
+                    <a
+                      href="tel:+251983250692"
+                      className="text-slate-600 dark:text-slate-400 hover:text-primary"
+                    >
+                      +251 983 250 692
                     </a>
                   </div>
                 </div>
+
+                {/* Location */}
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg
-                      className="w-6 h-6 text-blue-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
+                  <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
+                    <FaMapMarkerAlt className="text-primary text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">Location</h4>
-                    <p className="text-gray-600">Your City, Country</p>
+                    <h4 className="font-semibold dark:text-white">Location</h4>
+                    <p className="text-slate-600 dark:text-slate-400">
+                      Addis Abeba, Ethiopia
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
+
+            {/* Social Icons */}
             <div className="flex gap-4">
-              {[
-                { name: 'GitHub', url: 'https://github.com' },
-                { name: 'LinkedIn', url: 'https://linkedin.com' },
-                { name: 'Instagram', url: 'https://instagram.com' },
-                { name: 'Telegram', url: 'https://t.me' },
-              ].map((social) => (
+              {socials.map(({ icon: Icon, url, label, color }) => (
                 <a
-                  key={social.name}
-                  href={social.url}
+                  key={label}
+                  href={url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110"
-                  aria-label={social.name}
+                  aria-label={label}
+                  className="w-12 h-12 flex items-center justify-center
+                             rounded-full bg-gray-200 dark:bg-slate-700
+                             hover:bg-gray-300 dark:hover:bg-slate-600
+                             transition-all duration-300 transform hover:-translate-y-1 hover:scale-110 shadow-md"
                 >
-                  <span className="text-sm font-semibold">{social.name.slice(0, 2)}</span>
+                  <Icon className={`text-xl ${color}`} />
                 </a>
               ))}
             </div>
           </div>
-          <form onSubmit={handleSubmit} className="space-y-6">
+
+          {/* Contact Form */}
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-lg"
+          >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium mb-2">
                 Name
               </label>
               <input
                 type="text"
-                id="name"
                 name="name"
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                placeholder="Your Name"
+                className="w-full px-4 py-3 rounded-lg border
+                           border-slate-300 dark:border-slate-700
+                           bg-transparent focus:ring-2 focus:ring-primary"
+                placeholder="Your name"
               />
             </div>
+
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium mb-2">
                 Email
               </label>
               <input
                 type="email"
-                id="email"
                 name="email"
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 rounded-lg border
+                           border-slate-300 dark:border-slate-700
+                           bg-transparent focus:ring-2 focus:ring-primary"
                 placeholder="your.email@example.com"
               />
             </div>
+
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+              <label className="block text-sm font-medium mb-2">
                 Message
               </label>
               <textarea
-                id="message"
                 name="message"
                 required
+                rows={5}
                 value={formData.message}
                 onChange={handleChange}
-                rows={5}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                className="w-full px-4 py-3 rounded-lg border
+                           border-slate-300 dark:border-slate-700
+                           bg-transparent resize-none
+                           focus:ring-2 focus:ring-primary"
                 placeholder="Your message..."
               />
             </div>
+
             <button
               type="submit"
-              className="w-full px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg font-medium"
+              className="w-full py-3 rounded-lg bg-primary text-white
+                         hover:bg-primaryDark transition font-medium"
             >
               Send Message
             </button>
           </form>
         </div>
-        <div className="mt-16 text-center text-gray-600">
-          <p>&copy; 2024 Your Name. All rights reserved.</p>
+
+        {/* Footer */}
+        <div className="mt-16 text-center text-slate-500">
+          <p>&copy; 2025 Tigist Ashenafi. All rights reserved.</p>
         </div>
       </div>
     </section>
