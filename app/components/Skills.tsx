@@ -3,7 +3,6 @@
 import {
   SiGit,
   SiDocker,
-  SiMongodb,
   SiPostgresql,
   SiReact,
   SiNextdotjs,
@@ -14,28 +13,36 @@ import {
   SiAngular,
   SiMysql,
   SiLaravel,
+  SiNestjs,
+  SiSupabase,
+  SiVercel,
 } from 'react-icons/si';
+import { FaJava } from 'react-icons/fa';
 
 type Skill = {
   name: string;
   icon: React.ElementType;
-  color: string; // HEX or Tailwind class
-  useHex?: boolean; // optional flag to use hex color
+  color: string;
+  useHex?: boolean;
 };
 
 const skills: Skill[] = [
-  { name: 'React', icon: SiReact, color: '#61DAFB', useHex: true },
-  { name: 'Next.js', icon: SiNextdotjs, color: '#000000', useHex: true },
-  { name: 'TypeScript', icon: SiTypescript, color: '#3178C6', useHex: true },
+  { name: 'React',        icon: SiReact,       color: '#61DAFB', useHex: true },
+  { name: 'Next.js',      icon: SiNextdotjs,   color: '#000000', useHex: true },
+  { name: 'TypeScript',   icon: SiTypescript,  color: '#3178C6', useHex: true },
   { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4', useHex: true },
-  { name: 'Angular', icon: SiAngular, color: '#DD0031', useHex: true },
-  { name: 'Laravel', icon: SiLaravel, color: '#FF2D20', useHex: true },
-  { name: 'MySQL', icon: SiMysql, color: '#4479A1', useHex: true },
-  { name: 'NodeJS', icon: SiNodedotjs, color: '#339933', useHex: true },
-  { name: 'Express', icon: SiExpress, color: '#000000', useHex: true },
-  { name: 'Git', icon: SiGit, color: '#F1502F', useHex: true },
-  { name: 'Docker', icon: SiDocker, color: '#2496ED', useHex: true },
-  { name: 'PostgreSQL', icon: SiPostgresql, color: '#336791', useHex: true },
+  { name: 'Angular',      icon: SiAngular,     color: '#DD0031', useHex: true },
+  { name: 'NestJS',       icon: SiNestjs,      color: '#E0234E', useHex: true },
+  { name: 'Laravel',      icon: SiLaravel,     color: '#FF2D20', useHex: true },
+  { name: 'NodeJS',       icon: SiNodedotjs,   color: '#339933', useHex: true },
+  { name: 'Express',      icon: SiExpress,     color: '#000000', useHex: true },
+  { name: 'MySQL',        icon: SiMysql,       color: '#4479A1', useHex: true },
+  { name: 'PostgreSQL',   icon: SiPostgresql,  color: '#336791', useHex: true },
+  { name: 'Supabase',     icon: SiSupabase,    color: '#3ECF8E', useHex: true },
+  { name: 'Git',          icon: SiGit,         color: '#F1502F', useHex: true },
+  { name: 'Docker',       icon: SiDocker,      color: '#2496ED', useHex: true },
+  { name: 'Vercel',       icon: SiVercel,      color: '#000000', useHex: true },
+  { name: 'Java',         icon: FaJava,        color: '#007396', useHex: true },
 ];
 
 export default function Skills() {
@@ -62,14 +69,15 @@ export default function Skills() {
                            shadow-md hover:shadow-xl
                            transition transform hover:-translate-y-1"
               >
-                {/* Icon */}
                 <Icon
                   size={50}
                   color={skill.useHex ? skill.color : undefined}
-                  className={!skill.useHex ? `${skill.color} mb-4 group-hover:scale-110 transition` : 'mb-4 group-hover:scale-110 transition'}
+                  className={
+                    !skill.useHex
+                      ? `${skill.color} mb-4 group-hover:scale-110 transition`
+                      : 'mb-4 group-hover:scale-110 transition'
+                  }
                 />
-
-                {/* Name */}
                 <p className="font-medium text-slate-800 dark:text-slate-200">
                   {skill.name}
                 </p>

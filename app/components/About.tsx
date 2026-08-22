@@ -27,41 +27,47 @@ export default function About() {
           {/* Content */}
           <div>
             <h3 className="text-3xl font-bold mb-4 text-gray-900 dark:text-gray-100">
-              Passionate Full-Stack Developer
+              Full-Stack Developer & Software Engineer
             </h3>
             <p className="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
-              I am a dedicated Software Engineering student with a passion for creating
-              innovative web solutions. With over 2 years of experience in web development,
-              I specialize in building responsive and user-friendly applications.
+              I&apos;m <strong>Tigist Ashenafi</strong>, a Software Engineering graduate from
+              <strong> Debre Berhan University</strong> with a Bachelor of Science in Software
+              Engineering. I have a strong passion for building clean, efficient, and
+              user-friendly web applications.
             </p>
             <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-              My journey in software development has equipped me with strong problem-solving
-              skills and the ability to work with modern technologies. I have completed 10+
-              projects and gained valuable experience through internships with leading companies.
+              With hands-on experience from internships and personal projects, I specialize
+              in full-stack web development using modern technologies. I enjoy turning complex
+              problems into simple, elegant solutions.
             </p>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg text-center">
                 <h4 className="text-2xl font-bold text-blue-600 dark:text-primary mb-1">10+</h4>
-                <p className="text-gray-600 dark:text-gray-300">Projects Completed</p>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Projects</p>
               </div>
-              <div className="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+              <div className="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg text-center">
                 <h4 className="text-2xl font-bold text-blue-600 dark:text-primary mb-1">2+</h4>
-                <p className="text-gray-600 dark:text-gray-300">Years Experience</p>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Years Exp.</p>
+              </div>
+              <div className="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg text-center">
+                <h4 className="text-2xl font-bold text-blue-600 dark:text-primary mb-1">2</h4>
+                <p className="text-gray-600 dark:text-gray-300 text-sm">Internships</p>
               </div>
             </div>
 
             {/* Highlights */}
             <div className="space-y-2">
               {[
-                'Software Engineering Student',
+                'BSc Software Engineering - Debre Berhan University',
                 'Full-Stack Web Developer',
                 '2 Companies Internship Experience',
+                'Open to full-time & freelance opportunities',
               ].map((text, idx) => (
                 <div key={idx} className="flex items-center gap-2">
                   <svg
-                    className="w-5 h-5 text-blue-600 dark:text-primary"
+                    className="w-5 h-5 text-blue-600 dark:text-primary flex-shrink-0"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                   >

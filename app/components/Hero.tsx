@@ -26,7 +26,7 @@ export default function Hero() {
               <span className="text-primary dark:text-primary">Tigist Ashenafi</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300 font-semibold mb-6">
-              Web Developer
+              Full-stack Developer
             </p>
             <p className="text-base sm:text-lg md:text-lg text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
               Passionate full-stack developer creating elegant solutions to complex problems. 
