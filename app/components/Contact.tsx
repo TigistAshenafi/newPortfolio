@@ -200,7 +200,7 @@ export default function Contact() {
 
         {/* Footer */}
         <div className="mt-16 text-center text-slate-500">
-          <p>&copy; 2025 Tigist Ashenafi. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Tigist Ashenafi. All rights reserved.</p>
         </div>
       </div>
     </section>
