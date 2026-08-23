@@ -35,10 +35,10 @@ export default function Contact() {
   };
 
   const socials = [
-    { icon: FaGithub, url: 'https://github.com', label: 'GitHub', color: 'text-gray-900 dark:text-gray-100' },
-    { icon: FaLinkedin, url: 'https://linkedin.com', label: 'LinkedIn', color: 'text-blue-700 dark:text-blue-500' },
-    { icon: FaInstagram, url: 'https://instagram.com', label: 'Instagram', color: 'text-pink-500' },
-    { icon: FaTelegramPlane, url: 'https://t.me', label: 'Telegram', color: 'text-blue-400' },
+    { icon: FaGithub, url: 'https://github.com/TigistAshenafi', label: 'GitHub', color: 'text-gray-900 dark:text-gray-100' },
+    { icon: FaLinkedin, url: 'https://www.linkedin.com/in/tigist-ashenafi-5294912b7/', label: 'LinkedIn', color: 'text-blue-700 dark:text-blue-500' },
+    { icon: FaInstagram, url: 'https://www.instagram.com/titi_6120/', label: 'Instagram', color: 'text-pink-500' },
+    { icon: FaTelegramPlane, url: 'https://t.me/Tigi_29', label: 'Telegram', color: 'text-blue-400' },
   ];
 
   return (
