@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 * {
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
@@ -18,10 +22,46 @@ body {
 }
 
 @layer utilities {
-  .animation-delay-200 {
-    animation-delay: 0.2s;
+  /* Stagger delays */
+  .animation-delay-100 { animation-delay: 0.1s; }
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-300 { animation-delay: 0.3s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-500 { animation-delay: 0.5s; }
+
+  /* Fade + slide up entrance */
+  .fade-in-up {
+    animation: fadeInUp 0.7s ease both;
   }
-  .animation-delay-400 {
-    animation-delay: 0.4s;
+
+  /* Cursor blink for typewriter */
+  .animate-blink {
+    animation: blink 1s step-end infinite;
   }
+
+  /* Slow spin for profile ring */
+  .animate-spin-slow {
+    animation: spin 12s linear infinite;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
